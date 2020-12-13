@@ -1,0 +1,5 @@
+---
+debug : False                                                              # will toggle the debug prints
+ssls:
+  - myfootprint.co.nz
+  - perpetualguardian.co.nz
