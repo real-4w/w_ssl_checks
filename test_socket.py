@@ -16,7 +16,16 @@ context = ssl.create_default_context()
 with socket.create_connection((hostname, port)) as sock:
     with context.wrap_socket(sock, server_hostname=hostname) as ssock:
         print(ssock.version())
-        data = json.dumps(ssock.getpeercert())
+        cert=ssock.getpeercert()
+        #data = json.dumps(cert)
         #print(ssock.getpeercert())
 
-print (data)
+#print("\n", cert['subject'])
+#print(cert['issuer'])
+#print(cert['version'])
+#print(cert['notBefore'])
+#print(cert['notAfter'])
+#print(cert)
+
+for key in cert:
+    print(key, ' : ', cert[key])
